@@ -16,7 +16,7 @@ Want to quickly get started building your own project with [Prismic][prismic] an
 To start a new project using this starter, run the following commands in your terminal:
 
 ```sh
-npx @slicemachine/init@latest --starter sveltekit-starter-prismic-minimal
+npx @slicemachine/init@latest --starter jasmine-site-first-demo
 ```
 
 The commands will do the following:
@@ -110,4 +110,4 @@ limitations under the License.
 [prismic-docs]: https://prismic.io/docs/technologies/sveltekit
 [prismic-sign-up]: https://prismic.io/dashboard/signup
 [sveltekit]: https://kit.svelte.dev/
-[live-demo]: https://sveltekit-starter-prismic-minimal.vercel.app/
+[live-demo]: https://jasmine-site-first-demo.vercel.app/

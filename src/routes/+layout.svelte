@@ -1,7 +1,8 @@
 <script>
-	import { PrismicPreview } from '@prismicio/svelte/kit';
 	import { page } from '$app/stores';
-	import { repositoryName } from '$lib/prismicio';
+	import Nav from '$lib/components/Nav.svelte';
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -17,10 +18,18 @@
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 </svelte:head>
+
+<Nav links={data.nav.data.links} />
+
 <main>
 	<slot />
 </main>
-<PrismicPreview {repositoryName} />
+
+<section>
+	<footer>
+		<p>Jasmine Ly © 2023 - {new Date().getFullYear()}</p>
+	</footer>
+</section>
 
 <style>
 	@import "open-props/style";

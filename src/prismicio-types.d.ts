@@ -432,6 +432,63 @@ type SpotlightSliceVariation = SpotlightSliceDefault;
  */
 export type SpotlightSlice = prismic.SharedSlice<'spotlight', SpotlightSliceVariation>;
 
+/**
+ * Primary content in *Text → Primary*
+ */
+export interface TextSliceDefaultPrimary {
+	/**
+	 * Title field in *Text → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Text → Items*
+ */
+export interface TextSliceDefaultItem {
+	/**
+	 * Paragraph field in *Text → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text.items[].paragraph
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	paragraph: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<TextSliceDefaultPrimary>,
+	Simplify<TextSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Text*
+ */
+type TextSliceVariation = TextSliceDefault;
+
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `text`
+ * - **Description**: Text
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSlice = prismic.SharedSlice<'text', TextSliceVariation>;
+
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -464,7 +521,12 @@ declare module '@prismicio/client' {
 			SpotlightSlice,
 			SpotlightSliceDefaultPrimary,
 			SpotlightSliceVariation,
-			SpotlightSliceDefault
+			SpotlightSliceDefault,
+			TextSlice,
+			TextSliceDefaultPrimary,
+			TextSliceDefaultItem,
+			TextSliceVariation,
+			TextSliceDefault
 		};
 	}
 }

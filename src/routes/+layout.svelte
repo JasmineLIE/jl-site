@@ -30,8 +30,9 @@
 	<footer>
 
 		<p>Jasmine Ly © 2023 - {new Date().getFullYear()}</p>
+		<p>This site was created with Sveltekit and Open Props</p>
 	</footer>
-</div>>
+</div>
 
 
 
@@ -79,12 +80,13 @@
 	}
 
 
-	:global(section:nth-child(odd)) {
+	:global(section:nth-child(even)) {
 		color: var(--violet-1);
-		background: var(--violet-12);
+		background-image: var(--gradient-26);
 	}
 .footer {
 	display: flex;
+	text-align: center;
 		flex-direction: column;
 		align-items: center;
 		gap: var(--size-10);

@@ -45,27 +45,24 @@ section :global(p) {
 
 	@media screen and (orientation: landscape) {
 		section {
+			background-repeat:repeat;
 			background-image: var(--gradient-26);
 		
 			background-image: url(https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHU5OHh5MHhzeHU3czFoa2xoNmg0eHk5d2d0bWR1eWNudnIzM2ZtOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7AfbVgiWXKhAV0npwG/giphy.gif);
-			
-		
+	
 			
 			background-position: center;
-		
+			text-transform: uppercase;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: center;
+			gap: var(--size-4);
+			padding: var(--size-14) 0 var(--size-13);
 
 	
-	
-	text-transform: uppercase;
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: center;
-	gap: var(--size-4);
-	padding: var(--size-14) 0 var(--size-13);
-	
 
-}
+		}
 section :global(h1) {
 color: var(--sand-1);
 text-align: right;

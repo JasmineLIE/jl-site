@@ -19,6 +19,7 @@
 	nav {
 		
 		background-image: var(--gradient-26);
+		filter: var(--noise-filter-1);
 		z-index: 1;
 		width: 100%;
 		padding: var(--size-4);

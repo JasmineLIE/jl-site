@@ -2,10 +2,10 @@
 
 import CardList from './CardList/index.svelte';
 import HeroText from './HeroText/index.svelte';
-import RichText from './RichText/index.svelte';
+import Spotlight from './Spotlight/index.svelte';
 
 export const components = {
 	card_list: CardList,
 	hero_text: HeroText,
-	rich_text: RichText
+	spotlight: Spotlight
 };

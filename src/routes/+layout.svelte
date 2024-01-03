@@ -1,3 +1,4 @@
+
 <script>
 	import { page } from '$app/stores';
 	import Nav from '$lib/components/Nav.svelte';
@@ -27,6 +28,7 @@
 
 <section>
 	<footer>
+
 		<p>Jasmine Ly © 2023 - {new Date().getFullYear()}</p>
 	</footer>
 </section>
@@ -46,20 +48,26 @@
 	}
 
 	/* Define colors scheme for light and dark mode */
+	
+	
 	:root {
-		--brand: var(--lime-10);
-		--text-1: var(--sand-9);
-		--text-2: var(--lime-11);
-		--surface-1: var(--sand-1);
-		--surface-2: var(--lime-1);
-		--surface-3: var(--lime-4);
-		--surface-4: var(--lime-4);
+
+
+
+
+
+		--brand: var(--violet-10);
+		--text-1: var(--violet-9);
+		--text-2: var(--violet-11);
+		--surface-1: black;
+		--surface-2: var(--violet--1);
+		--surface-3: var(--violet--4);
+		--surface-4: var(--violet--4);
 		--surface-shadow: var(--gray-8-hsl);
-		--shadow-strength: 2%;
+		--shadow-strength: 5%;
 		
 	}
-
-
+	
 	:global(section) {
 		display: flex;
 		flex-direction: column;
@@ -69,7 +77,10 @@
 	}
 
 	:global(section:nth-child(odd)) {
-		background: var(--sand-2);
+		color: var(--violet-1);
+		background: var(--violet-12);
 	}
+
+
 	
 </style>

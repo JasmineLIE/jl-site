@@ -60,7 +60,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = CardListSlice | HeroTextSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice = SpotlightSlice | CardListSlice | HeroTextSlice;
 
 /**
  * Content for Page documents
@@ -195,6 +195,16 @@ export interface CardListSliceDefaultItem {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	name: prismic.KeyTextField;
+
+	/**
+	 * Link field in *CardList → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card_list.items[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
 }
 
 /**
@@ -269,6 +279,16 @@ export interface CardListSliceHeaderImageItem {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * Link field in *CardList → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: card_list.items[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
 }
 
 /**
@@ -351,46 +371,66 @@ type HeroTextSliceVariation = HeroTextSliceDefault;
 export type HeroTextSlice = prismic.SharedSlice<'hero_text', HeroTextSliceVariation>;
 
 /**
- * Primary content in *RichText → Primary*
+ * Primary content in *Spotlight → Primary*
  */
-export interface RichTextSliceDefaultPrimary {
+export interface SpotlightSliceDefaultPrimary {
 	/**
-	 * Content field in *RichText → Primary*
+	 * Image field in *Spotlight → Primary*
 	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Lorem ipsum...
-	 * - **API ID Path**: rich_text.primary.content
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: spotlight.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Title field in *Spotlight → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: spotlight.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	content: prismic.RichTextField;
+	title: prismic.TitleField;
+
+	/**
+	 * Desc field in *Spotlight → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: spotlight.primary.desc
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	desc: prismic.RichTextField;
 }
 
 /**
- * Default variation for RichText Slice
+ * Default variation for Spotlight Slice
  *
  * - **API ID**: `default`
- * - **Description**: RichText
+ * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type RichTextSliceDefault = prismic.SharedSliceVariation<
+export type SpotlightSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Simplify<RichTextSliceDefaultPrimary>,
+	Simplify<SpotlightSliceDefaultPrimary>,
 	never
 >;
 
 /**
- * Slice variation for *RichText*
+ * Slice variation for *Spotlight*
  */
-type RichTextSliceVariation = RichTextSliceDefault;
+type SpotlightSliceVariation = SpotlightSliceDefault;
 
 /**
- * RichText Shared Slice
+ * Spotlight Shared Slice
  *
- * - **API ID**: `rich_text`
- * - **Description**: RichText
+ * - **API ID**: `spotlight`
+ * - **Description**: Spotlight
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type RichTextSlice = prismic.SharedSlice<'rich_text', RichTextSliceVariation>;
+export type SpotlightSlice = prismic.SharedSlice<'spotlight', SpotlightSliceVariation>;
 
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -421,10 +461,10 @@ declare module '@prismicio/client' {
 			HeroTextSliceDefaultPrimary,
 			HeroTextSliceVariation,
 			HeroTextSliceDefault,
-			RichTextSlice,
-			RichTextSliceDefaultPrimary,
-			RichTextSliceVariation,
-			RichTextSliceDefault
+			SpotlightSlice,
+			SpotlightSliceDefaultPrimary,
+			SpotlightSliceVariation,
+			SpotlightSliceDefault
 		};
 	}
 }

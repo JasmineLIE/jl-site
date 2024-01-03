@@ -55,6 +55,14 @@
             "label": "Name",
             "placeholder": ""
           }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
+          }
         }
       }
     },
@@ -110,6 +118,14 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
           }
         }
       }

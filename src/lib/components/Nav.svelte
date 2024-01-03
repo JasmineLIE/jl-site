@@ -17,8 +17,8 @@
 
 <style>
 	nav {
-		position: fixed;
-		background: var(--surface-3);
+		
+		background-image: var(--gradient-26);
 		z-index: 1;
 		width: 100%;
 		padding: var(--size-4);

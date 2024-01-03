@@ -26,12 +26,14 @@
 	<slot />
 </main>
 
-<section>
+<div class="footer">
 	<footer>
 
 		<p>Jasmine Ly © 2023 - {new Date().getFullYear()}</p>
 	</footer>
-</section>
+</div>>
+
+
 
 <style>
 	@import "open-props/style";
@@ -57,7 +59,7 @@
 
 
 		--brand: var(--violet-10);
-		--text-1: var(--violet-9);
+		--text-1: var(--violet-1);
 		--text-2: var(--violet-11);
 		--surface-1: black;
 		--surface-2: var(--violet--1);
@@ -73,14 +75,22 @@
 		flex-direction: column;
 		align-items: center;
 		gap: var(--size-10);
-		padding: var(--size-11);
+		padding: var(--size-9);
 	}
+
 
 	:global(section:nth-child(odd)) {
 		color: var(--violet-1);
 		background: var(--violet-12);
 	}
-
+.footer {
+	display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--size-10);
+		padding: var(--size-9);
+		color: var(--violet--1);
+}
 
 	
 </style>

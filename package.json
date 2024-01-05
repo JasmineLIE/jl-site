@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@prismicio/client": "^7.3.1",
 		"@prismicio/svelte": "^1.0.3",
+		"@rodneylab/svelte-social-icons": "^0.0.28",
 		"open-props": "^1.6.16"
 	}
 }

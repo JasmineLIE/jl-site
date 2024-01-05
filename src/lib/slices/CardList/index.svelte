@@ -1,7 +1,7 @@
 
 <script>
 		import { PrismicImage, PrismicLink, PrismicRichText } from "@prismicio/svelte";
-
+		
 		
 	/** @type {import("@prismicio/client").Content.CardListSlice} */
 	export let slice;
@@ -32,7 +32,7 @@
 	
 			<footer>
 				<PrismicLink field={card.link}> <PrismicImage field={card.image} /></PrismicLink>
-	
+				
 				
 			</footer>
 		

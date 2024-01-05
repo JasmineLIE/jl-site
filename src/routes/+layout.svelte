@@ -2,7 +2,7 @@
 <script>
 	import { page } from '$app/stores';
 	import Nav from '$lib/components/Nav.svelte';
-
+	import SocialIcons from '@rodneylab/svelte-social-icons';
 	export let data;
 </script>
 
@@ -31,7 +31,27 @@
 
 		<p>Jasmine Ly © 2023 - {new Date().getFullYear()}</p>
 		<p>This site was created with Sveltekit and Open Props</p>
+		<article>
+			
+		</article>
+		<div class = "socials" >
+			<a href="mailto:jjasminely@gmail.com"class="button" 
+			
+			>	<SocialIcons network="email" /></a>
+
+			<a href="https://github.com/JasmineLIE/" class="button" 
+			>	<SocialIcons network="linkedin" /></a>
+
+			<a href="https://motherlusa.itch.io" class="button" 
+			>	<SocialIcons network="itch.io" /></a>
+
+			<a href="https://www.linkedin.com/in/jasmine-ly-on-call/" class="button" 
+			>	<SocialIcons network="github" /></a>
+		
+			
+		</div>
 	</footer>
+
 </div>
 
 
@@ -52,6 +72,25 @@
 
 	/* Define colors scheme for light and dark mode */
 	
+.button {
+	padding: 10px;
+	&:is(:hover) {
+		animation: var(--animation-blink);
+	}
+}
+	.socials {
+		
+		display: -moz-grid-line;
+		justify-content: center;
+		padding: 20px;
+		
+		
+
+		&:is(:hover, :focus) {
+		
+			cursor: pointer;
+		}
+	}
 	
 	:root {
 

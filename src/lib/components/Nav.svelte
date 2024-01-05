@@ -6,10 +6,13 @@
 </script>
 
 <nav>
+	
 	<ul>
+		<p><b>Jasmine Ly</b></p>
 		{#each links as link}
 			<li>
 				<PrismicLink field={link.link}>{link.label}</PrismicLink>
+
 			</li>
 		{/each}
 	</ul>
@@ -35,7 +38,12 @@
 		font-size: var(--font-size-1);
 		text-transform: uppercase;
 		font-weight: var(--font-weight-5);
-		color: var(--text-1);
+		color: black;
+	}
+
+	ul :global(p) {
+		
+		font-size: 20px;
 	}
 
 	li :global(a) {
@@ -45,7 +53,6 @@
 
 	li :global(a:hover) {
 		text-decoration: none;
-		color: var(--text-1);
 		box-shadow: inset 0 -2px var(--brand), 0 2px var(--brand);
 	}
 </style>

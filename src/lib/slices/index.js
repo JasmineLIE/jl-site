@@ -3,11 +3,11 @@
 import CardList from './CardList/index.svelte';
 import HeroText from './HeroText/index.svelte';
 import Spotlight from './Spotlight/index.svelte';
-import Text from './Text/index.svelte';
+import Title from './Title/index.svelte';
 
 export const components = {
 	card_list: CardList,
 	hero_text: HeroText,
 	spotlight: Spotlight,
-	text: Text
+	title: Title
 };

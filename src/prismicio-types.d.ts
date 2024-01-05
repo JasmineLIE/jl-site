@@ -27,16 +27,6 @@ export interface NavDocumentDataLinksItem {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	label: prismic.KeyTextField;
-
-	/**
-	 * anchor field in *Nav → Links*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: nav.links[].anchor
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	anchor: prismic.RichTextField;
 }
 
 /**
@@ -70,7 +60,7 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = SpotlightSlice | CardListSlice | HeroTextSlice;
+type PageDocumentDataSlicesSlice = TitleSlice | SpotlightSlice | CardListSlice | HeroTextSlice;
 
 /**
  * Content for Page documents
@@ -195,16 +185,6 @@ export interface CardListSliceDefaultItem {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
-
-	/**
-	 * Name field in *CardList → Items*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: card_list.items[].name
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */
-	name: prismic.KeyTextField;
 
 	/**
 	 * Link field in *CardList → Items*
@@ -359,61 +339,71 @@ type SpotlightSliceVariation = SpotlightSliceDefault;
 export type SpotlightSlice = prismic.SharedSlice<'spotlight', SpotlightSliceVariation>;
 
 /**
- * Primary content in *Text → Primary*
+ * Primary content in *Title → Primary*
  */
-export interface TextSliceDefaultPrimary {
+export interface TitleSliceDefaultPrimary {
 	/**
-	 * Title field in *Text → Primary*
+	 * Title field in *Title → Primary*
 	 *
-	 * - **Field Type**: Rich Text
+	 * - **Field Type**: Title
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: text.primary.title
+	 * - **API ID Path**: title.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.RichTextField;
+	title: prismic.TitleField;
+
+	/**
+	 * Portrait field in *Title → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: title.primary.portrait
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	portrait: prismic.ImageField<never>;
 }
 
 /**
- * Primary content in *Text → Items*
+ * Primary content in *Title → Items*
  */
-export interface TextSliceDefaultItem {
+export interface TitleSliceDefaultItem {
 	/**
-	 * Paragraph field in *Text → Items*
+	 * text field in *Title → Items*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: text.items[].paragraph
+	 * - **API ID Path**: title.items[].text
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	paragraph: prismic.RichTextField;
+	text: prismic.RichTextField;
 }
 
 /**
- * Default variation for Text Slice
+ * Default variation for Title Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextSliceDefault = prismic.SharedSliceVariation<
+export type TitleSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Simplify<TextSliceDefaultPrimary>,
-	Simplify<TextSliceDefaultItem>
+	Simplify<TitleSliceDefaultPrimary>,
+	Simplify<TitleSliceDefaultItem>
 >;
 
 /**
- * Slice variation for *Text*
+ * Slice variation for *Title*
  */
-type TextSliceVariation = TextSliceDefault;
+type TitleSliceVariation = TitleSliceDefault;
 
 /**
- * Text Shared Slice
+ * Title Shared Slice
  *
- * - **API ID**: `text`
- * - **Description**: Text
+ * - **API ID**: `title`
+ * - **Description**: Title
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextSlice = prismic.SharedSlice<'text', TextSliceVariation>;
+export type TitleSlice = prismic.SharedSlice<'title', TitleSliceVariation>;
 
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -445,11 +435,11 @@ declare module '@prismicio/client' {
 			SpotlightSliceDefaultPrimary,
 			SpotlightSliceVariation,
 			SpotlightSliceDefault,
-			TextSlice,
-			TextSliceDefaultPrimary,
-			TextSliceDefaultItem,
-			TextSliceVariation,
-			TextSliceDefault
+			TitleSlice,
+			TitleSliceDefaultPrimary,
+			TitleSliceDefaultItem,
+			TitleSliceVariation,
+			TitleSliceDefault
 		};
 	}
 }

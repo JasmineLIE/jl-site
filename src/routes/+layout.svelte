@@ -94,10 +94,6 @@
 	
 	:root {
 
-
-
-
-
 		--brand: var(--violet-10);
 		--text-1: var(--violet-1);
 		--text-2: var(--violet-11);
@@ -114,13 +110,13 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: var(--size-10);
+		gap: var(--size-6);
 		padding: var(--size-9);
 	}
 
 
 	:global(section:nth-child(even)) {
-		color: var(--violet-1);
+		color: var(--violet-8);
 		background-image: var(--gradient-26);
 	}
 .footer {

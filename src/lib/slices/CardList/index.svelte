@@ -7,8 +7,7 @@
 	export let slice;
 
 
-	
-	$: wide = slice.primary.wide;
+
 	
 </script>
 
@@ -16,16 +15,14 @@
 <section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 	<PrismicRichText field={slice.primary.heading} /> 
 	
-	<div class = "cards" class:wide>
+	<div class = "cards">
 		
 		{#each slice.items as card, index}
 	
 
 		<article class="card">
 			<header>
-			
-			
-			
+	
 				<PrismicRichText field={card.title} />
 			</header>
 			<PrismicRichText field={card.description} />
@@ -59,8 +56,8 @@
 @media screen and (orientation: landscape) {
 	.cards {
 		display:grid;
-		
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
 		gap: var(--size-6);
 		width:70%;
 
@@ -70,6 +67,7 @@
 	article{
 		
 		border-radius: var(--radius-3);
+		border: var(--border-size-1) solid var(--violet-3);
 		padding: var(--size-4);
 		box-shadow: var(--shadow-3);
 		background-color: black;
@@ -96,8 +94,7 @@
 	
 
 	.cards.wide {
-		grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-
+	
 	}
 	.wide article {
 		padding: var(--size-7);

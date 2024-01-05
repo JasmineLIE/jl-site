@@ -1,8 +1,8 @@
 {
-  "id": "text",
+  "id": "title",
   "type": "SharedSlice",
-  "name": "Text",
-  "description": "Text",
+  "name": "Title",
+  "description": "Title",
   "variations": [
     {
       "id": "default",
@@ -18,15 +18,23 @@
             "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "single": "heading1"
+          }
+        },
+        "portrait": {
+          "type": "Image",
+          "config": {
+            "label": "Portrait",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },
       "items": {
-        "paragraph": {
+        "text": {
           "type": "StructuredText",
           "config": {
-            "label": "Paragraph",
+            "label": "text",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

@@ -1,5 +1,5 @@
 <script>
-	import { PrismicLink } from '@prismicio/svelte';
+	import { PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
 
 	/** @type {import('../../prismicio-types').NavDocumentData['links']} */
 	export let links;

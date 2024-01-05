@@ -23,23 +23,19 @@
 
 		<article class="card">
 			<header>
-				{#if slice.variation === "headerImage"}
-				<PrismicImage 
-				style="border-radius: var(--radius-blob-{(index % 5) + 1})" 
-				field={card.image} 
-				
-				/>
-				{/if}
+			
+			
+			
 				<PrismicRichText field={card.title} />
 			</header>
 			<PrismicRichText field={card.description} />
-			{#if slice.variation === "default"}
+	
 			<footer>
 				<PrismicLink field={card.link}> <PrismicImage field={card.image} /></PrismicLink>
-		<!--<h4>{card.name} -->
+	
 				
 			</footer>
-			{/if}
+		
 		</article>
 	
 	{/each}

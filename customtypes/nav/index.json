@@ -25,6 +25,15 @@
 								"label": "Label",
 								"placeholder": ""
 							}
+						},
+						"anchor": {
+							"type": "StructuredText",
+							"config": {
+								"label": "anchor",
+								"placeholder": "",
+								"allowTargetBlank": true,
+								"single": "embed"
+							}
 						}
 					}
 				}

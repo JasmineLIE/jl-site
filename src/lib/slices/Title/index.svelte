@@ -57,8 +57,9 @@
 
 .portrait :global(img){
 	width:400px;
+	
 	object-fit:cover;
-	border-radius: var(--radius-blob-4);
+	border-radius: var(--radius-round);
 	padding: var(--size-4);
 	
 }

@@ -60,7 +60,14 @@ export type NavDocument<Lang extends string = string> = prismic.PrismicDocumentW
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = TitleSlice | SpotlightSlice | CardListSlice | HeroTextSlice;
+type PageDocumentDataSlicesSlice =
+	| ArtStationLinkSlice
+	| TallImageGallerySlice
+	| ImageGallerySlice
+	| TitleSlice
+	| SpotlightSlice
+	| CardListSlice
+	| HeroTextSlice;
 
 /**
  * Content for Page documents
@@ -136,6 +143,61 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 >;
 
 export type AllDocumentTypes = NavDocument | PageDocument;
+
+/**
+ * Primary content in *ArtStationLink → Primary*
+ */
+export interface ArtStationLinkSliceDefaultPrimary {
+	/**
+	 * Title field in *ArtStationLink → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: art_station_link.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.TitleField;
+
+	/**
+	 * Subtitle field in *ArtStationLink → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: art_station_link.primary.subtitle
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	subtitle: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ArtStationLink Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArtStationLinkSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<ArtStationLinkSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *ArtStationLink*
+ */
+type ArtStationLinkSliceVariation = ArtStationLinkSliceDefault;
+
+/**
+ * ArtStationLink Shared Slice
+ *
+ * - **API ID**: `art_station_link`
+ * - **Description**: ArtStationLink
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArtStationLinkSlice = prismic.SharedSlice<
+	'art_station_link',
+	ArtStationLinkSliceVariation
+>;
 
 /**
  * Primary content in *CardList → Primary*
@@ -277,6 +339,58 @@ type HeroTextSliceVariation = HeroTextSliceDefault;
 export type HeroTextSlice = prismic.SharedSlice<'hero_text', HeroTextSliceVariation>;
 
 /**
+ * Primary content in *ImageGallery → Items*
+ */
+export interface ImageGallerySliceDefaultItem {
+	/**
+	 * image field in *ImageGallery → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery.items[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * link field in *ImageGallery → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: image_gallery.items[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
+ * Default variation for ImageGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageGallerySliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	Simplify<ImageGallerySliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ImageGallery*
+ */
+type ImageGallerySliceVariation = ImageGallerySliceDefault;
+
+/**
+ * ImageGallery Shared Slice
+ *
+ * - **API ID**: `image_gallery`
+ * - **Description**: ImageGallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageGallerySlice = prismic.SharedSlice<'image_gallery', ImageGallerySliceVariation>;
+
+/**
  * Primary content in *Spotlight → Primary*
  */
 export interface SpotlightSliceDefaultPrimary {
@@ -337,6 +451,61 @@ type SpotlightSliceVariation = SpotlightSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type SpotlightSlice = prismic.SharedSlice<'spotlight', SpotlightSliceVariation>;
+
+/**
+ * Primary content in *TallImageGallery → Items*
+ */
+export interface TallImageGallerySliceDefaultItem {
+	/**
+	 * image field in *TallImageGallery → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: tall_image_gallery.items[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * link field in *TallImageGallery → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: tall_image_gallery.items[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
+ * Default variation for TallImageGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TallImageGallerySliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	Simplify<TallImageGallerySliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TallImageGallery*
+ */
+type TallImageGallerySliceVariation = TallImageGallerySliceDefault;
+
+/**
+ * TallImageGallery Shared Slice
+ *
+ * - **API ID**: `tall_image_gallery`
+ * - **Description**: TallImageGallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TallImageGallerySlice = prismic.SharedSlice<
+	'tall_image_gallery',
+	TallImageGallerySliceVariation
+>;
 
 /**
  * Primary content in *Title → Primary*
@@ -422,6 +591,10 @@ declare module '@prismicio/client' {
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			ArtStationLinkSlice,
+			ArtStationLinkSliceDefaultPrimary,
+			ArtStationLinkSliceVariation,
+			ArtStationLinkSliceDefault,
 			CardListSlice,
 			CardListSliceDefaultPrimary,
 			CardListSliceDefaultItem,
@@ -431,10 +604,18 @@ declare module '@prismicio/client' {
 			HeroTextSliceDefaultPrimary,
 			HeroTextSliceVariation,
 			HeroTextSliceDefault,
+			ImageGallerySlice,
+			ImageGallerySliceDefaultItem,
+			ImageGallerySliceVariation,
+			ImageGallerySliceDefault,
 			SpotlightSlice,
 			SpotlightSliceDefaultPrimary,
 			SpotlightSliceVariation,
 			SpotlightSliceDefault,
+			TallImageGallerySlice,
+			TallImageGallerySliceDefaultItem,
+			TallImageGallerySliceVariation,
+			TallImageGallerySliceDefault,
 			TitleSlice,
 			TitleSliceDefaultPrimary,
 			TitleSliceDefaultItem,

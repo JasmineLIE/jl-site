@@ -19,8 +19,9 @@
 		
 		{#each slice.items as card, index}
 	
-
+		
 		<article class="card">
+			<PrismicLink field={card.link}>
 			<header>
 	
 				<PrismicRichText field={card.title} />
@@ -28,12 +29,13 @@
 			<PrismicRichText field={card.description} />
 	
 			<footer>
-				<PrismicLink field={card.link}> <PrismicImage field={card.image} /></PrismicLink>
+			 <PrismicImage field={card.image} />
 				
 				
 			</footer>
-		
+		</PrismicLink>
 		</article>
+	
 	
 	{/each}
 
@@ -63,7 +65,13 @@
 
 	}
 }
-	
+article :global(p) {
+	color: var(--violet-6);
+}
+article :global(h3) {
+	color: var(--violet-6);
+}
+
 	article{
 		
 		border-radius: var(--radius-3);
@@ -80,9 +88,10 @@
 
 		&:is(:hover, :focus) {
 			
+
+	text-decoration: none;
 	animation: var(--animation-blink);
     cursor: pointer;
-    color: white;
     background-image: var(--gradient-26);
     
     @nest .light & {
@@ -91,27 +100,6 @@
   }
 	}
 
-	
-
-	.cards.wide {
-	
-	}
-	.wide article {
-		padding: var(--size-7);
-	}
-
-	.wide header {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: start;
-		gap: var(--size-5);
-		margin-block: var(--size-2);
-	}
-
-	.wide header :global(img) {
-		margin: 0;
-	}
 
 	
 </style>

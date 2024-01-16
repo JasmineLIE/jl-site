@@ -16,9 +16,7 @@
 	<article>
 	
 		
-		<div class="image">
-			<PrismicImage field={slice.primary.image}/>
-		</div>
+	
 	
 		
 		<div class="spotlight">
@@ -26,7 +24,9 @@
 		
 			
 		</div>
-		
+		<div class="image">
+			<PrismicImage field={slice.primary.image}/>
+		</div>
 	
 	</article>
 	
@@ -50,19 +50,20 @@
 		
 	}
 	.spotlight {
-		padding-left: 50px;
+		padding-right: 30px;
 	
-		
+		padding-left: 20px;
 		max-width: 50%;
 		text-align: justify;
 		
- 
-  font-weight: var(--font-weight-5);
+
 
 	
 	}
-.image {
-
+.image :global(img) {
+	object-fit:cover;
+	border-radius: var(--radius-5);
+	padding: var(--size-4);
 	max-width: 500px;
   
 }
@@ -93,7 +94,7 @@
   width:100%;
   
 
-  font-weight: var(--font-weight-5);
+
 
 	
 	}

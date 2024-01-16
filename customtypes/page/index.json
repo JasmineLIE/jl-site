@@ -27,6 +27,15 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"art_station_link": {
+							"type": "SharedSlice"
+						},
+						"tall_image_gallery": {
+							"type": "SharedSlice"
+						},
+						"image_gallery": {
+							"type": "SharedSlice"
+						},
 						"title": {
 							"type": "SharedSlice"
 						},

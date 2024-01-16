@@ -40,13 +40,13 @@
 			>	<SocialIcons network="email" /></a>
 
 			<a href="https://github.com/JasmineLIE/" class="button" 
-			>	<SocialIcons network="linkedin" /></a>
+			>	<SocialIcons network="github" /></a>
 
 			<a href="https://motherlusa.itch.io" class="button" 
 			>	<SocialIcons network="itch.io" /></a>
 
 			<a href="https://www.linkedin.com/in/jasmine-ly-on-call/" class="button" 
-			>	<SocialIcons network="github" /></a>
+			>	<SocialIcons network="linkedin" /></a>
 		
 			
 		</div>
